@@ -1,6 +1,25 @@
 [![build status](https://img.shields.io/travis/gcanti/io-ts/master.svg?style=flat-square)](https://travis-ci.org/gcanti/io-ts)
 ![npm downloads](https://img.shields.io/npm/dm/io-ts.svg)
 
+Build based on [gcanti/io-ts](https://github.com/gcanti/io-ts), and add optional method to
+allow to define an optional properties more readable.
+
+```typescript
+const AType = t.type({
+  a: t.string,
+  b: t.optional(t.string), // define an optional property
+});
+
+type A = t.TypeOf<typeof AType>;
+//// Type A is like following:
+// interface A {
+//   a: string;
+//   b?: string; // define an optional property
+// }
+```
+
+---
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
